@@ -13,8 +13,7 @@ public class Car {
         this.carPosition = new CarPosition();
     }
 
-    public void move() {
-        int randomNumber = RandomUtils.getRandomNumber();
+    public void move(int randomNumber) {
         if (randomNumber > MAX_STOP_NUMBER) {
             moveForward();
         }
