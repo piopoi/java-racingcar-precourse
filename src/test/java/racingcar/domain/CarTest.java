@@ -38,4 +38,14 @@ public class CarTest {
         car.moveForward(); //앞으로 전진
         assertThat(car.getPosition()).isEqualTo(1);
     }
+
+    @Test
+    void 자동차_위치_하이픈_출력() {
+        Car car = new Car("aaa");
+        for (int i = 0; i < 5; i++) {
+            car.moveForward();
+        }
+        assertThat(car.getHyphenRoad()).isEqualTo("-----");
+    }
+
 }

@@ -30,4 +30,15 @@ public class Car {
     public int getPosition() {
         return carPosition.getPosition();
     }
+
+    /**
+     * 현재 위치를 -(하이픈)으로 표시
+     */
+    public String getHyphenRoad() {
+        String hyphenRoad = "";
+        for (int i = 0; i < carPosition.getPosition(); i++) {
+            hyphenRoad += "-";
+        }
+        return hyphenRoad;
+    }
 }
