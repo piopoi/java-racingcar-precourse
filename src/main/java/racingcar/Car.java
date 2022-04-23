@@ -1,26 +1,24 @@
 package racingcar;
 
 public class Car {
-    private String name;
-    private int position;
+    private CarName carName;
+    private CarPosition carPosition;
 
-    public Car(String name) {
-        if (!nameLengthCheck(name)) {
-            throw new IllegalArgumentException("[ERROR] 자동차이름은 5자 이하로 입력해주세요.");
-        }
-        this.name = name;
-        this.position = 0;
-    }
-
-    private static boolean nameLengthCheck(String inputName) {
-        return inputName.length() <= 5;
+    public Car(String carName) {
+        this.carName = new CarName(carName);
+        this.carPosition = new CarPosition();
     }
 
     public void moveForward() {
-        this.position++;
+        carPosition.setPosition(carPosition.getPosition() + 1);
+    }
+
+    public String getName() {
+        return carName.getName();
     }
 
     public int getPosition() {
-        return this.position;
+        return carPosition.getPosition();
     }
+
 }
