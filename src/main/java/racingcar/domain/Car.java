@@ -1,9 +1,9 @@
 package racingcar.domain;
 
-import camp.nextstep.edu.missionutils.Randoms;
+import racingcar.util.RandomUtils;
 
 public class Car {
-    private static final int STOP_MAX_NUMBER = 3; //3 이하일 경우 정지.
+    private static final int MAX_STOP_NUMBER = 3; //3 이하일 경우 정지.
 
     private final CarName carName;
     private final CarPosition carPosition;
@@ -14,8 +14,8 @@ public class Car {
     }
 
     public void move() {
-        int randomNumber = Randoms.pickNumberInRange(1, 9);
-        if (randomNumber > STOP_MAX_NUMBER) {
+        int randomNumber = RandomUtils.getRandomNumber();
+        if (randomNumber > MAX_STOP_NUMBER) {
             moveForward();
         }
     }
