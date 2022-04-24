@@ -3,10 +3,8 @@ package racingcar.domain;
 import static org.assertj.core.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
-import racingcar.domain.CarPosition;
 
 class CarPositionTest {
-
     @Test
     void 자동차_위치_입력() {
         assertThatIllegalArgumentException().isThrownBy(() -> {
