@@ -11,10 +11,14 @@ public class Cars {
     private final List<Car> cars;
 
     public Cars(List<Car> cars) {
-        if (cars.size() < MIN_CAR_COUNT) {
+        checkCarsSize(cars.size());
+        this.cars = cars;
+    }
+
+    static void checkCarsSize(int size) {
+        if (size < MIN_CAR_COUNT) {
             throw new IllegalArgumentException("[ERROR] 최소 2대 이상의 자동차 이름을 입력해주세요.");
         }
-        this.cars = cars;
     }
 
     public void move() {
@@ -29,7 +33,7 @@ public class Cars {
         return new RacingResult(Winners);
     }
 
-    private List<Car> getWinners() {
+    List<Car> getWinners() {
         List<Car> Winners = new ArrayList<>(cars);
         Winners.removeIf(car -> {
             CarPosition WinnerPosition = getWinnerPosition();
@@ -38,7 +42,7 @@ public class Cars {
         return Winners;
     }
 
-    private CarPosition getWinnerPosition() {
+    CarPosition getWinnerPosition() {
         Car WinnerCar = Collections.max(cars);
         return WinnerCar.getPosition();
     }
