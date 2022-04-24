@@ -1,8 +1,10 @@
 package racingcar.domain;
 
+import racingcar.view.ErrorMessage;
+
 public class CarPosition implements Comparable<CarPosition> {
     private static final int MIN_POSITION = 0;
-    
+
     private int position;
 
     public CarPosition() {
@@ -15,7 +17,7 @@ public class CarPosition implements Comparable<CarPosition> {
 
     public void setPosition(int position) {
         if (position < MIN_POSITION) {
-            throw new IllegalArgumentException("[ERROR] 자동차 위치는 0 이상의 숫자로 입력해주세요.");
+            throw new IllegalArgumentException(ErrorMessage.ERROR_INPUT_CARPOSITION.getMessage());
         }
         this.position = position;
     }
@@ -41,12 +43,6 @@ public class CarPosition implements Comparable<CarPosition> {
 
     @Override
     public int compareTo(CarPosition carPosition) {
-        if (carPosition.getPosition() < getPosition()) {
-            return 1;
-        }
-        if (carPosition.getPosition() > getPosition()) {
-            return -1;
-        }
-        return 0;
+        return Integer.compare(getPosition(), carPosition.getPosition());
     }
 }

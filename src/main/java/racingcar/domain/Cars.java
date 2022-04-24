@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import racingcar.util.RandomUtils;
+import racingcar.view.ErrorMessage;
 
 public class Cars {
     public static final int MIN_CAR_COUNT = 2; //최소 차량 대수
@@ -17,7 +18,7 @@ public class Cars {
 
     static void checkCarsSize(int size) {
         if (size < MIN_CAR_COUNT) {
-            throw new IllegalArgumentException("[ERROR] 최소 2대 이상의 자동차 이름을 입력해주세요.");
+            throw new IllegalArgumentException(ErrorMessage.ERROR_INPUT_CARCOUNT.getMessage());
         }
     }
 

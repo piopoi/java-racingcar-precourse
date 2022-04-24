@@ -1,5 +1,7 @@
 package racingcar.domain;
 
+import racingcar.view.ErrorMessage;
+
 public class CarName {
     private static final int MAX_NAME_LENGTH = 5;
     private static final int MIN_NAME_LENGTH = 1;
@@ -12,7 +14,7 @@ public class CarName {
 
     private static void checkNameLength(String name) {
         if (name.length() > MAX_NAME_LENGTH || name.length() < MIN_NAME_LENGTH) {
-            throw new IllegalArgumentException("[ERROR] 자동차이름은 1~5자로 입력해주세요.");
+            throw new IllegalArgumentException(ErrorMessage.ERROR_INPUT_CARNAME.getMessage());
         }
     }
 
