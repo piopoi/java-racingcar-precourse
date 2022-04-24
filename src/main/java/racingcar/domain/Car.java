@@ -36,4 +36,28 @@ public class Car implements Comparable<Car> {
     public int compareTo(Car car) {
         return getPosition().compareTo(car.getPosition());
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        Car car = (Car) o;
+
+        if (!carName.equals(car.carName)) {
+            return false;
+        }
+        return carPosition.equals(car.carPosition);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = carName.hashCode();
+        result = 31 * result + carPosition.hashCode();
+        return result;
+    }
 }
