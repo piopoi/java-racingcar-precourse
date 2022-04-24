@@ -23,13 +23,6 @@ public class Cars {
         }
     }
 
-    public void viewCurrentPosition() {
-        for (Car car : cars) {
-            String printString = car.getName() + " : " + car.getHyphenRoad();
-            System.out.println(printString);
-        }
-    }
-
     public RacingResult getRacingResult() {
         CarPosition WinnerPosition = getWinnerPosition();
         List<Car> Winners = getWinners();
@@ -52,5 +45,9 @@ public class Cars {
 
     boolean isWinner(Car car, CarPosition WinnerPosition) {
         return WinnerPosition.equals(car.getPosition());
+    }
+
+    public List<Car> getCars() {
+        return cars;
     }
 }

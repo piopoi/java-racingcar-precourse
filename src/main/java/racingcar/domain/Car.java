@@ -4,6 +4,7 @@ import racingcar.util.RandomUtils;
 
 public class Car implements Comparable<Car> {
     private static final int MAX_STOP_NUMBER = 3; //3 이하일 경우 정지.
+    private static final int MOVE_FORWARD_DISTANCE = 1; //1회 전진 시 이동하는 position
 
     private final CarName carName;
     private final CarPosition carPosition;
@@ -20,7 +21,7 @@ public class Car implements Comparable<Car> {
     }
 
     void moveForward() {
-        carPosition.setPosition(carPosition.getPosition() + 1);
+        carPosition.setPosition(carPosition.getPosition() + MOVE_FORWARD_DISTANCE);
     }
 
     public String getName() {
@@ -29,17 +30,6 @@ public class Car implements Comparable<Car> {
 
     public CarPosition getPosition() {
         return carPosition;
-    }
-
-    /**
-     * 현재 위치를 -(하이픈)으로 표시
-     */
-    public String getHyphenRoad() {
-        String hyphenRoad = "";
-        for (int i = 0; i < carPosition.getPosition(); i++) {
-            hyphenRoad += "-";
-        }
-        return hyphenRoad;
     }
 
     @Override

@@ -48,7 +48,7 @@ public class RacingController {
     public void start() {
         for (int i = 0; i < moveCount.getCount(); i++) {
             cars.move();
-            cars.viewCurrentPosition();
+            Output.viewCurrentPosition(cars);
             System.out.println(i + 1 + "번째 종료");
             System.out.println();
         }

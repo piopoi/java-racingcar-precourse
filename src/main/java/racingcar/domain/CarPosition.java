@@ -1,10 +1,12 @@
 package racingcar.domain;
 
 public class CarPosition implements Comparable<CarPosition> {
+    private static final int MIN_POSITION = 0;
+    
     private int position;
 
     public CarPosition() {
-        this.position = 0;
+        this.position = MIN_POSITION;
     }
 
     public int getPosition() {
@@ -12,7 +14,7 @@ public class CarPosition implements Comparable<CarPosition> {
     }
 
     public void setPosition(int position) {
-        if (position < 0) {
+        if (position < MIN_POSITION) {
             throw new IllegalArgumentException("[ERROR] 자동차 위치는 0 이상의 숫자로 입력해주세요.");
         }
         this.position = position;

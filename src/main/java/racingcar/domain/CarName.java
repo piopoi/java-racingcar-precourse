@@ -1,6 +1,7 @@
 package racingcar.domain;
 
 public class CarName {
+    private static final int MIN_NAME_LENGTH = 5;
     private final String name;
 
     public CarName(String name) {
@@ -11,7 +12,7 @@ public class CarName {
     }
 
     private static boolean nameLengthCheck(String name) {
-        return name.length() <= 5;
+        return name.length() <= MIN_NAME_LENGTH;
     }
 
     public String getName() {
