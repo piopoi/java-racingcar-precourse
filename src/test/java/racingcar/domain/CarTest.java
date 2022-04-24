@@ -22,9 +22,8 @@ public class CarTest {
 
     @Test
     void 자동차_전진() {
-        int beforePosition = car.getPosition();
         car.moveForward(); //앞으로 전진
-        assertThat(car.getPosition()).isEqualTo(beforePosition + 1);
+        assertThat(car.getPosition().getPosition()).isEqualTo(1);
     }
 
     @Test

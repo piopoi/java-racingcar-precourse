@@ -7,7 +7,7 @@ public class MoveCount {
 
     public MoveCount(String moveCountStr) {
         try {
-            this.count = Integer.parseInt(moveCountStr.trim());
+            this.count = Integer.parseInt(moveCountStr);
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException("[ERROR] 숫자를 입력해주세요.");
         }

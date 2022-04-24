@@ -2,7 +2,7 @@ package racingcar.domain;
 
 import racingcar.util.RandomUtils;
 
-public class Car {
+public class Car implements Comparable<Car> {
     private static final int MAX_STOP_NUMBER = 3; //3 이하일 경우 정지.
 
     private final CarName carName;
@@ -27,8 +27,8 @@ public class Car {
         return carName.getName();
     }
 
-    public int getPosition() {
-        return carPosition.getPosition();
+    public CarPosition getPosition() {
+        return carPosition;
     }
 
     /**
@@ -40,5 +40,10 @@ public class Car {
             hyphenRoad += "-";
         }
         return hyphenRoad;
+    }
+
+    @Override
+    public int compareTo(Car car) {
+        return getPosition().compareTo(car.getPosition());
     }
 }
