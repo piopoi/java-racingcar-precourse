@@ -17,6 +17,7 @@ public class Output {
             String printString = car.getName() + " : " + getHyphenRoad(car.getPosition());
             System.out.println(printString);
         }
+        System.out.println();
     }
 
     /**

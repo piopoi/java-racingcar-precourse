@@ -26,7 +26,7 @@ public class RacingController {
             carNames.forEach(carName -> carList.add(new Car(carName)));
             this.cars = new Cars(carList);
         } catch (IllegalArgumentException e) {
-            System.out.println("[ERROR] 5자 이하의 이름으로 입력해주세요.");
+            System.out.println(e.getMessage());
             initCars();
         }
     }
@@ -49,8 +49,6 @@ public class RacingController {
         for (int i = 0; i < moveCount.getCount(); i++) {
             cars.move();
             Output.viewCurrentPosition(cars);
-            System.out.println(i + 1 + "번째 종료");
-            System.out.println();
         }
         RacingResult racingResult = cars.getRacingResult();
         Output.outputWinnerNames(racingResult);
