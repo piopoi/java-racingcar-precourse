@@ -29,27 +29,22 @@ public class Cars {
     }
 
     public RacingResult getRacingResult() {
-        CarPosition WinnerPosition = getWinnerPosition();
-        List<Car> Winners = getWinners();
-        return new RacingResult(Winners);
+        return new RacingResult(getWinners());
     }
 
     List<Car> getWinners() {
-        List<Car> Winners = new ArrayList<>(cars);
-        Winners.removeIf(car -> {
-            CarPosition WinnerPosition = getWinnerPosition();
-            return !isWinner(car, WinnerPosition);
-        });
-        return Winners;
+        List<Car> winners = new ArrayList<>(cars);
+        winners.removeIf(car -> !isWinner(car, getWinnerPosition()));
+        return winners;
     }
 
-    CarPosition getWinnerPosition() {
+    int getWinnerPosition() {
         Car WinnerCar = Collections.max(cars);
         return WinnerCar.getPosition();
     }
 
-    boolean isWinner(Car car, CarPosition WinnerPosition) {
-        return WinnerPosition.equals(car.getPosition());
+    boolean isWinner(Car car, int winnerPosition) {
+        return winnerPosition == car.getPosition();
     }
 
     public List<Car> getCars() {

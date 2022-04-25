@@ -18,6 +18,6 @@ class CarsTest {
         car.moveForward();
         List<Car> carList = Arrays.asList(car, new Car("bbb"), new Car("ccc"));
         Cars cars = new Cars(carList);
-        assertThat(cars.getWinnerPosition().getPosition()).isEqualTo(1);
+        assertThat(cars.getWinnerPosition()).isEqualTo(1);
     }
 }

@@ -28,13 +28,13 @@ public class Car implements Comparable<Car> {
         return carName.getName();
     }
 
-    public CarPosition getPosition() {
-        return carPosition;
+    public int getPosition() {
+        return carPosition.getPosition();
     }
 
     @Override
     public int compareTo(Car car) {
-        return getPosition().compareTo(car.getPosition());
+        return Integer.compare(getPosition(), car.getPosition());
     }
 
     @Override

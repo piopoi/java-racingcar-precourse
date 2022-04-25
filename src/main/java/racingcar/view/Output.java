@@ -23,9 +23,9 @@ public class Output {
     /**
      * 현재 위치를 -(하이픈)으로 표시
      */
-    static String getHyphenRoad(CarPosition carPosition) {
+    static String getHyphenRoad(int position) {
         StringBuilder hyphenRoad = new StringBuilder();
-        for (int i = 0; i < carPosition.getPosition(); i++) {
+        for (int i = 0; i < position; i++) {
             hyphenRoad.append("-");
         }
         return hyphenRoad.toString();
